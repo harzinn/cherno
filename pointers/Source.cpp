@@ -1,26 +1,25 @@
 #include <iostream>
 
-#define LOG(x) std::cout << x <<std::endl
+// Define is_palindrome() here:
+bool is_palindrome(std::string text) {
+    std::string rtext = "";
+    for (int i = 0; i < text.size(); i++) {
+        char c = text[i];
+        rtext += c;
+    }
+    if (text != rtext) {
+        return false;
+    }
+    else {
+        return true;
+    }
 
-void Increment(int& value)
-{
-	value++;
 }
 
 int main() {
-	
-	int a = 5;
-	int b = 8;
 
-	int* ref = &a;
-	*ref = 2;
-	ref = &b;
-	*ref = 1;
-
-	//Increment(a);
-	LOG(a);
-	LOG(b);
-
-	std::cin.get();
+    std::cout << is_palindrome("madam") << "\n";
+    std::cout << is_palindrome("ada") << "\n";
+    std::cout << is_palindrome("lovelace") << "\n";
 
 }
